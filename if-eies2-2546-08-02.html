@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if-else2</title>
+</head>
+<body>
+    <button onclick="chkgreeting()">Click Me</button>
+
+    <script>
+    function chkgreeting() {
+        var time = new Date().getHours();
+        if (time < 12) {
+          greeting = "Good morning";
+        } else if (time < 20) {
+          greeting ="Good day";
+        } else {
+            greeting = "Good evening";
+        }
+        alert(greeting);
+    }
+    </script>
+</body>
+</html>

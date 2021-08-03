@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+    <p>Array Example</p>
+    <p id="demo"></p>
+    
+    <script>
+    // covid infected cases 7 days
+        var covid_cases = {seventh:18500, sixth:18000, fifth:17500, fourth:17000, third:16500, second:16000, first:15500};
+        var total_cases = parseInt(covid_cases["seventh"]) + parseInt(covid_cases["sixth"]) + parseInt(covid_cases["fifth"]) +
+        parseInt(covid_cases["fourth"]) + parseInt(covid_cases["third"]) + parseInt(covid_cases["second"]) +
+        parseInt(covid_cases["first"]);
+        document.getElementById("demo").innerHTML =
+        "Number of cases in 7 days " + covid_cases["fifth"]+
+        " <br>Total cases in 7 day " + total_cases; 
+        // ใช้เก็บ ว/ด/ป  
+    </script>
+    
+</body>
+</html>
