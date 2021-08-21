@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>switch</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+        var str_day ="" ;
+        var get_num_day = new Date().getDay();
+        //console.log(get_num_day);
+        switch (get_num_day) {
+            case 0:
+                str_day = "วันอาทิตย์";
+                break;
+            case 1:
+                str_day = "วันจันทร์";
+                break;
+            case 3:
+                str_day = "วันอังคาร";
+                break;
+            case 4:
+                str_day = "วันพุธ";
+                break;
+            case 5:
+                str_day = "วันพฤหัสบดี";
+                break;
+            case 6:
+                str_day = "วันศุกร์";
+                break;
+            case 7:
+                str_day = "วันเสาร์";
+                break;
+        }
+        console.log(str_day);
+        var str_month ="";
+        var get_num_month = new Date().getMonth();
+        switch (get_num_month) {
+            case 0:
+                str_month = "มกราคม";
+                break;
+            case 1:
+                str_month="กุมภาพันธ์";
+                break
+            case 7:
+                str_month = "สิงหาคม";
+                break
+        }
+        var get_num_day = new Date().getDate();
+        var get_num_year = new Date();
+        console.log(str_day + "ที่" + get_num_year+543);
+
+    </script>
+</body>
+</html>
