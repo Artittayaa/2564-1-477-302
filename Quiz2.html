@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <title>TITLE</title>
+     <meta name="description" content="DESCRIPTION">
+    <link rel="stylesheet" href="PATH">
+    <script>
+    function chkUsername() {
+        if(typeof(Storage) !== "undefined") {
+            if (localStorage.username) {
+                document.getElementById("div1").innerHTML = localStorage.username;
+            } else {
+                document.getElementById("div1").innerHTML = "<input type='text' id='username'>";
+            }
+        } else {
+            document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+        }
+    }
+    function saveUsername() {
+        uname = document.getElementById("username");
+        localStorage.username = uname.value;
+        chkUsername();
+    }
+    function delUsername() {
+        localStorage.removeItem("username");
+        chkUsername();
+    }
+    </script>
+
+
+</head>
+<body onload="chkUsername()">
+
+    User Name:<div id="div1"></div>
+    Password:<div id="div2"><input type="password" id="password"></div>
+    <p><button onclick="saveUsername()" type="button">Save</button>
+    <button onclick="delUsername()" type="button">Delete</button></p>
+    <div id="result"></div>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TITLE</title>
+    <meta name="description" content="DESCRIPTION">
+    <style>
+        body { color: #7ee00d; font-family: 'Kanit', sans-serif; font-size: 1em;}
+        p { font-weight: normal; text-align: left;}
+        a { font: normal 2em; }
+    </style>
+</head>
+<body>
+   <p id="demo"><b>The button to get your position.</b> </p>
+   <button onclick="getLocation()">Try It</button>
+   <br>
+   <div id="mapholder"></div>
+
+   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAoKoNVKdXRrp8YDgara5W1m2nfTU1dG5g&callback=initMap"
+ type="text/javascript"></script>
+   <script>
+   var x = document.getElementById("demo");
+   function getLocation() {
+       if (navigator.geolocation) {
+           navigator.geolocation.getCurrentPosition(showPosition, showError);
+       } else {
+           x.innerHTML = "Geolocation is not supported by this browser.";
+       }
+   }
+
+   function showPosition(position) {
+       lat = position.coords.latitude;
+       lon = position.coords.longitude;
+       latlon = new google.maps.LatLng(lat, lon)
+       mapholder = document.getElementById('mapholder')
+       mapholder.style.height = '350px';
+       mapholder.style.width = '500px';
+
+       var myOptions = {
+           center: latlon,
+           zoom:16,
+           mapTypeId:google.maps.MapTypeId.ROADMAP,
+           mapTypeControl:false,
+           navigationControlOptions:{style:google.maps.NavigationControlStyle.SMALL}
+       }
+
+       var map = new google.maps.Map(document.getElementById("mapholder"), myOptions);
+       var marker = new google.maps.Marker({position:latlon, map:map, title:"You are here!"});
+   }
+
+   function showError(error) {
+      switch(error.code) {
+          case error.PERMISSION_DENIED:
+              x.innerHTML = "User denied the request for Geolocation."
+              break;
+          case error.POSITION_UNAVAILABLE:
+              x.innerHTML = "Location information is unavailable."
+              break;
+          case error.TIMEOUT:
+              x.innerHTML = "The request to get user location timed out."
+              break;
+          case error.UNKNOWN_ERROR:
+              x.innerHTML = "An unknown error occurred."
+              break;
+      }
+  }
+  </script>
+
+</body>
+</html>
+
+
+
