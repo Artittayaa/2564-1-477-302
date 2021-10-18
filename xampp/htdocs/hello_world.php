@@ -9,7 +9,7 @@
 <body>
     <?php 
     $txt1 = "I am";    //string
-    $age = 40;         //number
+    $age = 21;         //number
     $txt2 = "years old.";   //string
     $_txt1 = "";
     
