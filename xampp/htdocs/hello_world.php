@@ -8,23 +8,12 @@
 </head>
 <body>
     <?php 
-    $txt1 = "I am";    //string
-    $age = 40;         //number
-    $txt2 = "years old.";   //string
-    $_txt1 = "";
-    $chk = true;
+        $semester_fee = 16000;
+        $discount = 0.5;
+        $u_discount = 0.2;
 
-    if ($chk) {
-        //ture
-    } else {
-        //false
-    }
-    
-    //echo $txt1;
-    //echo $age;
-    //echo $txt2;
-    echo $txt1 . $age . $txt2;
-    echo "<div style='color:red'><h1>Hello World in</h1></div> PHP without HTML!";
+        $fee_after_u_discount = $semester_fee * (1 - su_discount);
+        echo $fee_after_u_discount 
     ?>
 </body>
 </html>
