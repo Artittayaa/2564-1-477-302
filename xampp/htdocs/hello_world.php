@@ -12,6 +12,13 @@
     $age = 40;         //number
     $txt2 = "years old.";   //string
     $_txt1 = "";
+    $chk = true;
+
+    if ($chk) {
+        //ture
+    } else {
+        //false
+    }
     
     //echo $txt1;
     //echo $age;
